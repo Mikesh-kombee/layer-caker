@@ -1,4 +1,5 @@
 import "@/app/globals.css";
+import GoogleTagManager from "@/components/GoogleTagManager";
 
 export default function RootLayout({
   children,
@@ -7,6 +8,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <GoogleTagManager />
+      </head>
       <body>{children}</body>
     </html>
   );
