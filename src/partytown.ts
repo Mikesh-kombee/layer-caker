@@ -8,10 +8,41 @@ export const partytownConfig = {
     "sanityConfig",
     "sanityAnalytics",
     "sanityTracking",
-    // Add any third-party scripts you want to run in the web worker
-    // Example: 'dataLayer.push',
-    // 'gtag',
-    // 'fbq',
+
+    // Google Tag Manager
+    "dataLayer",
+    "gtm",
+    "gtag",
+    "googletagmanager",
+
+    // Analytics and Tracking
+    "analytics",
+    "tracking",
+    "fbq",
+    "fb",
+    "facebook",
+
+    // Other third-party scripts
+    "dataLayer.push",
+    "window.dataLayer",
+    "window.gtag",
+    "window.fbq",
+
+    // Next.js related
+    "next",
+    "next/router",
+    "next/script",
+
+    // Styled Components
+    "styled-components",
+    "styled",
+
+    // Dayjs
+    "dayjs",
+
+    // Image handling
+    "next/image",
+    "@sanity/image-url",
   ],
 };
 
