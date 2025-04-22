@@ -48,6 +48,3 @@ next-env.d.ts
 *.tar.lz
 *.tar.lzo
 *.tar.lrz
-
-# partytown
-public/~partytown
