@@ -1,6 +1,7 @@
+// src/app/layout.tsx
 import "@/app/globals.css";
-import GoogleTagManager from "@/components/GoogleTagManager";
-import { partytownSnippet } from "@builder.io/partytown/integration";
+import Script from "next/script";
+import { partytownSnippet } from '@qwik.dev/partytown/integration';
 import { partytownConfig } from "../partytown";
 
 export default function RootLayout({
@@ -11,17 +12,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <GoogleTagManager />
-        <script
+        <Script
+          id="partytown"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
-            __html: `
-              ${partytownSnippet(partytownConfig)}
-              console.log('Partytown initialized:', window.partytown);
-            `,
+            __html: partytownSnippet(partytownConfig),
           }}
         />
       </head>
-      <body>{children}</body>
+      <body className="antialiased">
+        {children}
+      </body>
     </html>
   );
 }

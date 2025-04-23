@@ -1,6 +1,9 @@
-import { partytownSnippet } from "@builder.io/partytown/integration";
+import {
+  partytownSnippet,
+} from "@qwik.dev/partytown/integration";
 
 export const partytownConfig = {
+  debug: process.env.NODE_ENV === "development",
   forward: [
     // Sanity Studio scripts
     "sanity",
@@ -27,23 +30,13 @@ export const partytownConfig = {
     "window.dataLayer",
     "window.gtag",
     "window.fbq",
-
-    // Next.js related
-    "next",
-    "next/router",
-    "next/script",
-
-    // Styled Components
-    "styled-components",
-    "styled",
-
-    // Dayjs
-    "dayjs",
-
-    // Image handling
-    "next/image",
-    "@sanity/image-url",
   ],
+  resolveUrl: (url: URL) => {
+    if (url.pathname.includes("gtm")) {
+      return new URL("https://www.googletagmanager.com" + url.pathname);
+    }
+    return url;
+  },
 };
 
 export const partytownScript = partytownSnippet(partytownConfig);

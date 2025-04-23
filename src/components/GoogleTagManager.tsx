@@ -7,7 +7,8 @@ export default function GoogleTagManager() {
     <>
       <Script
         id="gtm-script"
-        strategy="afterInteractive"
+        type="text/partytown"
+        strategy="worker"
         dangerouslySetInnerHTML={{
           __html: `
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

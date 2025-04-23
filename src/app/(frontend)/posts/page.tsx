@@ -11,7 +11,7 @@ export default async function Page() {
     <main className="container mx-auto grid grid-cols-1 gap-6 p-12">
       <Title>Post Index</Title>
       <div className="flex flex-col gap-24 py-12">
-        {posts.map((post) => (
+        {posts.map((post: POSTS_QUERYResult[number]) => (
           <PostCard key={post._id} {...post} />
         ))}
       </div>
